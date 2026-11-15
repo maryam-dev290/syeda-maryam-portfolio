@@ -1,0 +1,1426 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Syeda Maryam Noor - Full Stack Developer, UI/UX Designer and Graphic Designer">
+<title>Syeda Maryam Noor | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+/* ===== THEME ===== */
+:root {
+  --bg:#f6f2e9;
+  --text:#211d19;
+  --olive:#777653;
+  --gold:#c5a15b;
+  --brown:#49372f;
+  --card:#fffdf8;
+  --muted:#625d55;
+  --line:#ded6c7;
+}
+
+body.dark {
+  --bg:#171613;
+  --text:#faf5eb;
+  --card:#24221d;
+  --muted:#d5cbb9;
+  --line:#494237;
+  --olive:#c0bd91;
+}
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html {
+  scroll-behavior:smooth;
+  scroll-padding-top:85px;
+}
+
+body {
+  background:var(--bg);
+  color:var(--text);
+  font-family:"DM Sans",sans-serif;
+  line-height:1.7;
+  transition:background .3s,color .3s;
+  overflow-x:hidden;
+}
+
+a {
+  text-decoration:none;
+  color:inherit;
+}
+
+button,input,textarea {
+  font-family:inherit;
+}
+
+.container {
+  width:min(1150px,90%);
+  margin:auto;
+}
+
+section {
+  padding:95px 0;
+}
+
+h1,h2,h3 {
+  font-family:"Playfair Display",serif;
+}
+
+.accent {
+  color:var(--olive);
+}
+
+.eyebrow {
+  color:var(--olive);
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:3px;
+}
+
+.section-title {
+  font-size:clamp(35px,5vw,55px);
+  margin:12px 0 35px;
+}
+
+.btn {
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  gap:9px;
+  padding:13px 24px;
+  border-radius:30px;
+  font-weight:700;
+  font-size:14px;
+  transition:.3s;
+  cursor:pointer;
+}
+
+.primary {
+  background:var(--olive);
+  color:white;
+}
+
+.secondary {
+  border:1px solid var(--olive);
+  color:var(--text);
+}
+
+.btn:hover {
+  transform:translateY(-4px);
+  opacity:.85;
+}
+
+/* ===== NAVBAR ===== */
+
+header {
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:1000;
+  background:var(--bg);
+  border-bottom:1px solid var(--line);
+}
+
+nav {
+  min-height:75px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.logo {
+  font:700 28px "Playfair Display";
+  color:var(--olive);
+}
+
+.nav-links {
+  display:flex;
+  gap:22px;
+}
+
+.nav-links a {
+  font-size:13px;
+  font-weight:600;
+  transition:.3s;
+}
+
+.nav-links a:hover {
+  color:var(--olive);
+}
+
+.nav-actions {
+  display:flex;
+  gap:10px;
+}
+
+.nav-actions button {
+  border:1px solid var(--line);
+  background:var(--card);
+  color:var(--text);
+  padding:10px 13px;
+  border-radius:50%;
+  cursor:pointer;
+}
+
+.menu {
+  display:none;
+}
+
+/* ===== HERO SECTION ===== */
+
+.hero {
+  min-height:760px;
+  padding:130px 0 80px;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+  background:
+    radial-gradient(ellipse at 75% 35%,#c8c7ed 0%,transparent 48%),
+    radial-gradient(ellipse at 45% 25%,#d3e2f1 0%,transparent 55%),
+    radial-gradient(ellipse at 85% 90%,#ead9ca 0%,transparent 40%),
+    var(--bg);
+}
+
+body.dark .hero {
+  background:
+    radial-gradient(ellipse at 75% 35%,#41405b 0%,transparent 48%),
+    radial-gradient(ellipse at 45% 25%,#303e4a 0%,transparent 55%),
+    radial-gradient(ellipse at 85% 90%,#44352d 0%,transparent 40%),
+    var(--bg);
+}
+
+.hero-grid {
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  align-items:center;
+  gap:40px;
+}
+
+.hero h1 {
+  font-size:clamp(45px,6vw,76px);
+  line-height:1.1;
+  margin:15px 0;
+}
+
+.hero h1 span {
+  color:var(--olive);
+  display:block;
+}
+
+.roles {
+  color:var(--olive);
+  font-size:16px;
+  font-weight:700;
+  margin:18px 0;
+}
+
+.tagline {
+  font:600 clamp(27px,3.5vw,39px)/1.2 "Playfair Display";
+  margin:25px 0;
+}
+
+.hero-description {
+  color:var(--muted);
+  max-width:550px;
+}
+
+.hero-buttons {
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin:28px 0;
+}
+
+.socials {
+  display:flex;
+  gap:17px;
+  flex-wrap:wrap;
+  font-size:14px;
+}
+
+.socials a:hover {
+  color:var(--olive);
+}
+
+/* ===== CIRCULAR PROFILE IMAGE ===== */
+
+/* Circle container */
+.portrait-area {
+  width:min(100%,480px);
+  aspect-ratio:1/1;
+  position:relative;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  overflow:hidden;
+
+  /* Soft blurred colors behind the portrait */
+  background:
+    radial-gradient(circle at 30% 25%,#d8e8f5 0%,transparent 55%),
+    radial-gradient(circle at 75% 30%,#c8c4eb 0%,transparent 55%),
+    radial-gradient(circle at 50% 85%,#ead9c8 0%,transparent 60%),
+    #e8e8ee;
+}
+
+/* Dark mode circle background */
+body.dark .portrait-area {
+  background:
+    radial-gradient(circle at 30% 25%,#344653 0%,transparent 55%),
+    radial-gradient(circle at 75% 30%,#41405b 0%,transparent 55%),
+    radial-gradient(circle at 50% 85%,#49372f 0%,transparent 60%),
+    #292823;
+}
+
+/* Original transparent portrait */
+.portrait {
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center bottom;
+  display:block;
+  background:transparent;
+  border:0;
+  border-radius:0;
+  box-shadow:none;
+}
+
+/* ===== ABOUT ===== */
+
+.about-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+  align-items:center;
+}
+
+.about-box {
+  padding:38px;
+  border-radius:22px;
+  background:var(--card);
+  border:1px solid var(--line);
+}
+
+.about-box h3 {
+  font-size:30px;
+  margin-bottom:15px;
+}
+
+.about-box p,
+.about-grid p {
+  color:var(--muted);
+}
+
+.facts {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin-top:25px;
+}
+
+.fact {
+  padding:17px;
+  border-radius:15px;
+  background:var(--card);
+  border:1px solid var(--line);
+}
+
+.fact strong {
+  display:block;
+  color:var(--olive);
+  font-size:19px;
+}
+
+/* ===== SERVICES ===== */
+
+.service-grid {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+
+.card {
+  padding:27px;
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:20px;
+  transition:.3s;
+}
+
+.card:hover {
+  transform:translateY(-7px);
+  border-color:var(--gold);
+}
+
+.card .icon {
+  font-size:30px;
+  color:var(--olive);
+}
+
+.card h3 {
+  font-size:21px;
+  margin:15px 0;
+}
+
+.card p {
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* ===== SKILLS ===== */
+
+.skills-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+
+.skill {
+  padding:25px;
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:18px;
+}
+
+.skill h3 {
+  margin-bottom:15px;
+}
+
+.tags {
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+}
+
+.tags span {
+  padding:8px 13px;
+  border-radius:30px;
+  background:var(--bg);
+  border:1px solid var(--line);
+  color:var(--text);
+  font-size:13px;
+}
+
+/* ===== PROJECTS ===== */
+
+.projects {
+  background:rgba(119,118,83,.07);
+}
+
+.project-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:22px;
+}
+
+.project {
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:22px;
+  overflow:hidden;
+  transition:.3s;
+}
+
+.project:hover {
+  transform:translateY(-6px);
+}
+
+.project-cover {
+  height:220px;
+  display:grid;
+  place-items:center;
+  color:white;
+  font:600 42px "Playfair Display";
+  background:linear-gradient(135deg,#777653,#b9b4a0);
+}
+
+.project:nth-child(2) .project-cover {
+  background:linear-gradient(135deg,#d1c5a9,#777653);
+}
+
+.project:nth-child(3) .project-cover {
+  background:linear-gradient(135deg,#49372f,#b77b48);
+}
+
+.project:nth-child(4) .project-cover {
+  background:linear-gradient(135deg,#b8b3d1,#777653);
+}
+
+.project-content {
+  padding:25px;
+}
+
+.project-content h3 {
+  font-size:25px;
+  margin:8px 0;
+}
+
+.project-content p {
+  color:var(--muted);
+  font-size:14px;
+}
+
+.project-content .tags {
+  margin-top:15px;
+}
+
+.project-links {
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+  margin-top:20px;
+}
+
+.project-links a,
+.text-link {
+  color:var(--olive);
+  font-size:14px;
+  font-weight:700;
+}
+
+/* ===== BEHANCE ===== */
+
+.behance-box {
+  background:#e7e1d4;
+  padding:45px;
+  border-radius:25px;
+  color:#49372f;
+}
+
+body.dark .behance-box {
+  background:#343027;
+  color:#faf5eb;
+}
+
+.behance-box h3 {
+  font-size:35px;
+  margin:12px 0;
+}
+
+.behance-box p {
+  margin-bottom:20px;
+  max-width:650px;
+}
+
+/* ===== EXPERIENCE ===== */
+
+.timeline {
+  max-width:800px;
+  margin:auto;
+  border-left:2px solid var(--gold);
+  padding-left:30px;
+}
+
+.timeline-item {
+  margin-bottom:35px;
+  position:relative;
+}
+
+.timeline-item:before {
+  content:"";
+  position:absolute;
+  left:-37px;
+  top:8px;
+  width:12px;
+  height:12px;
+  border-radius:50%;
+  background:var(--olive);
+}
+
+.timeline-item h3 {
+  font-size:22px;
+  margin:7px 0;
+}
+
+.timeline-item p {
+  color:var(--muted);
+}
+
+/* ===== CONTACT ===== */
+
+.contact {
+  background:var(--card);
+}
+
+.contact-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:35px;
+}
+
+.contact-info p {
+  margin:15px 0;
+  color:var(--muted);
+}
+
+.contact-info a {
+  color:var(--olive);
+  font-weight:600;
+}
+
+form {
+  background:var(--bg);
+  padding:25px;
+  border-radius:20px;
+}
+
+form label {
+  display:block;
+  font-size:13px;
+  font-weight:600;
+}
+
+input,textarea {
+  width:100%;
+  padding:13px;
+  margin:8px 0 15px;
+  border:1px solid var(--line);
+  border-radius:10px;
+  background:var(--card);
+  color:var(--text);
+  font:inherit;
+}
+
+textarea {
+  height:120px;
+  resize:vertical;
+}
+
+/* ===== FOOTER ===== */
+
+footer {
+  background:#171613;
+  color:#eee5d5;
+  padding:30px;
+  text-align:center;
+}
+
+.footer-links {
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+  margin-top:12px;
+}
+
+.footer-links a:hover {
+  color:var(--gold);
+}
+
+/* ===== ANIMATIONS ===== */
+
+.reveal {
+  opacity:0;
+  transform:translateY(25px);
+  transition:.7s;
+}
+
+.reveal.visible {
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media(max-width:950px) {
+
+  .nav-links {
+    display:none;
+    position:absolute;
+    top:75px;
+    left:5%;
+    width:90%;
+    padding:20px;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:15px;
+    flex-direction:column;
+  }
+
+  .nav-links.open {
+    display:flex;
+  }
+
+  .menu {
+    display:block;
+  }
+
+  .hero-grid,
+  .about-grid,
+  .contact-grid {
+    grid-template-columns:1fr;
+  }
+
+  .hero {
+    padding:120px 0 65px;
+  }
+
+  .hero-content {
+    text-align:center;
+  }
+
+  .hero-description {
+    margin:auto;
+  }
+
+  .hero-buttons,
+  .socials {
+    justify-content:center;
+  }
+
+  .portrait-area {
+    width:min(85%,420px);
+  }
+
+  .service-grid {
+    grid-template-columns:1fr 1fr;
+  }
+}
+
+@media(max-width:600px) {
+
+  section {
+    padding:65px 0;
+  }
+
+  .container {
+    width:90%;
+  }
+
+  .service-grid,
+  .skills-grid,
+  .project-grid {
+    grid-template-columns:1fr;
+  }
+
+  .facts {
+    grid-template-columns:1fr;
+  }
+
+  .hero h1 {
+    font-size:45px;
+  }
+
+  .portrait-area {
+    width:min(88%,340px);
+  }
+
+  .hero-buttons .btn {
+    width:100%;
+  }
+
+  .about-box {
+    padding:25px;
+  }
+
+  .behance-box {
+    padding:28px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<header>
+<nav class="container">
+
+  <a href="#home" class="logo">SMN.</a>
+
+  <div class="nav-links" id="navLinks">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <div class="nav-actions">
+    <button id="theme" aria-label="Toggle theme">☾</button>
+    <button class="menu" id="menu" aria-label="Open menu">☰</button>
+  </div>
+
+</nav>
+</header>
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+<div class="container hero-grid">
+
+  <div class="hero-content reveal">
+
+    <span class="eyebrow">HELLO, I'M</span>
+
+    <h1>Syeda <span>Maryam Noor</span></h1>
+
+    <div class="roles" id="roleText">
+      Full Stack Developer
+    </div>
+
+    <div class="tagline">
+      Blending Creative Designs with Smart Web Development.
+    </div>
+
+    <p class="hero-description">
+      I combine full-stack web development, UI/UX design,
+      and creative digital solutions to build modern,
+      functional, and visually engaging experiences.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#projects" class="btn primary">
+        Explore My Work ↗
+      </a>
+
+      <a href="#contact" class="btn secondary">
+        Let's Connect
+      </a>
+    </div>
+
+    <div class="socials">
+
+      <a href="https://www.linkedin.com/in/syeda-maryam-180800343/" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+
+      <a href="https://www.behance.net/syedamaryamnoor/projects" target="_blank" rel="noopener">
+        <i class="fab fa-behance"></i> Behance
+      </a>
+      <a href="tel:+923402116323">
+        <i class="fas fa-phone"></i> +92 340 2116323
+      </a>
+
+    </div>
+  </div>
+
+  <!-- CIRCULAR PROFILE IMAGE -->
+
+  <div class="portrait-area reveal">
+
+    <img
+      src="syeda_maryam_noor_cutout.png"
+      class="portrait"
+      alt="Syeda Maryam Noor">
+
+  </div>
+
+</div>
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+<div class="container about-grid">
+
+  <div>
+    <span class="eyebrow">ABOUT ME</span>
+
+    <h2 class="section-title">
+      A Little About <span class="accent">Me.</span>
+    </h2>
+
+    <div class="about-box">
+      <h3>Creative thinking. Technical execution.</h3>
+
+      <p>
+        I am Syeda Maryam Noor, a creative and technology-driven
+        developer passionate about building modern digital experiences.
+        My interests combine full-stack web development, UI/UX design,
+        graphic design, and digital creativity.
+      </p>
+    </div>
+  </div>
+
+  <div>
+    <p>
+      I enjoy transforming ideas into practical digital solutions.
+      I focus on user-friendly interfaces, clean development,
+      visual storytelling, and continuous learning.
+    </p>
+
+    <div class="facts">
+      <div class="fact">
+        <strong>Web</strong>
+        Development
+      </div>
+
+      <div class="fact">
+        <strong>UI/UX</strong>
+        Design
+      </div>
+
+      <div class="fact">
+        <strong>Creative</strong>
+        Thinking
+      </div>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<!-- SERVICES -->
+
+<section id="services">
+<div class="container">
+
+  <span class="eyebrow">WHAT I DO</span>
+
+  <h2 class="section-title">
+    My <span class="accent">Services.</span>
+  </h2>
+
+  <div class="service-grid">
+
+    <article class="card reveal">
+      <div class="icon"><i class="fas fa-code"></i></div>
+      <h3>Web Development</h3>
+      <p>Responsive websites, modern web applications, frontend and backend development.</p>
+    </article>
+
+    <article class="card reveal">
+      <div class="icon"><i class="fas fa-pen-ruler"></i></div>
+      <h3>UI/UX Design</h3>
+      <p>Intuitive interfaces, user journeys, wireframes and Figma prototypes.</p>
+    </article>
+
+    <article class="card reveal">
+      <div class="icon"><i class="fas fa-palette"></i></div>
+      <h3>Graphic Design</h3>
+      <p>Social media creatives, visual identities and digital graphics.</p>
+    </article>
+
+    <article class="card reveal">
+      <div class="icon"><i class="fas fa-hashtag"></i></div>
+      <h3>Social Media</h3>
+      <p>Creative content, digital branding and social media presentation.</p>
+    </article>
+
+  </div>
+</div>
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills">
+<div class="container">
+
+  <span class="eyebrow">MY TOOLKIT</span>
+
+  <h2 class="section-title">
+    Skills & <span class="accent">Technologies.</span>
+  </h2>
+
+  <div class="skills-grid">
+
+    <div class="skill reveal">
+      <h3>Frontend Development</h3>
+      <div class="tags">
+        <span>HTML5</span>
+        <span>CSS3</span>
+        <span>JavaScript</span>
+        <span>TypeScript</span>
+        <span>React.js</span>
+        <span>Next.js</span>
+        <span>Tailwind CSS</span>
+      </div>
+    </div>
+
+    <div class="skill reveal">
+      <h3>Backend & APIs</h3>
+      <div class="tags">
+        <span>Node.js</span>
+        <span>REST APIs</span>
+        <span>API Routes</span>
+        <span>JSON</span>
+        <span>Nodemailer</span>
+      </div>
+    </div>
+
+    <div class="skill reveal">
+      <h3>Design & Creative</h3>
+      <div class="tags">
+        <span>Figma</span>
+        <span>UI/UX Design</span>
+        <span>Graphic Design</span>
+        <span>Responsive Design</span>
+      </div>
+    </div>
+
+    <div class="skill reveal">
+      <h3>Tools & Technologies</h3>
+      <div class="tags">
+        <span>Git</span>
+        <span>GitHub</span>
+        <span>VS Code</span>
+        <span>Leaflet</span>
+        <span>OpenStreetMap</span>
+        <span>Docker</span>
+        <span>BFS / DFS</span>
+        <span>Dijkstra</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- PROJECTS -->
+
+<section class="projects" id="projects">
+<div class="container">
+
+  <span class="eyebrow">SELECTED WORK</span>
+
+  <h2 class="section-title">
+    Featured <span class="accent">Projects.</span>
+  </h2>
+
+  <div class="project-grid">
+
+    <article class="project reveal">
+
+      <div class="project-cover">VoltEdge.</div>
+
+      <div class="project-content">
+
+        <span class="eyebrow">FULL STACK DEVELOPMENT</span>
+
+        <h3>VoltEdge — EV Charging Network</h3>
+
+        <p>
+          A full-stack platform for finding EV charging stations,
+          planning routes and exploring alternative routes.
+          Developed as a team project.
+        </p>
+
+        <div class="tags">
+          <span>Next.js</span>
+          <span>TypeScript</span>
+          <span>Leaflet</span>
+          <span>Dijkstra</span>
+          <span>Docker</span>
+        </div>
+
+        <div class="project-links">
+          <a href="https://voltedge-ilpn.onrender.com/" target="_blank" rel="noopener">Live Demo ↗</a>
+        </div>
+
+      </div>
+    </article>
+
+    <article class="project reveal">
+
+      <div class="project-cover">HealthCare.</div>
+
+      <div class="project-content">
+
+        <span class="eyebrow">ARTIFICIAL INTELLIGENCE</span>
+
+        <h3>HealthCare — AI Health Ecosystem</h3>
+
+        <p>
+          An AI-powered healthcare platform using
+          Retrieval-Augmented Generation (RAG) for
+          context-aware healthcare guidance.
+        </p>
+
+        <div class="tags">
+          <span>Next.js</span>
+          <span>Tailwind CSS</span>
+          <span>Groq AI</span>
+          <span>RAG</span>
+        </div>
+
+        <div class="project-links">
+          <a href="https://health-care-platform-encr.vercel.app/" target="_blank" rel="noopener">Live Demo ↗</a>
+        </div>
+
+      </div>
+    </article>
+
+    <article class="project reveal">
+
+      <div class="project-cover">BurgerHut.</div>
+
+      <div class="project-content">
+
+        <span class="eyebrow">FRONTEND DEVELOPMENT</span>
+
+        <h3>BurgerHut — Restaurant Website</h3>
+
+        <p>
+          A responsive restaurant website with a clean layout,
+          modern interface and interactive user experience.
+        </p>
+
+        <div class="tags">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+        </div>
+
+        <div class="project-links">
+          <a href="https://burgerhut-web.netlify.app/" target="_blank" rel="noopener">Live Demo ↗</a>
+        </div>
+
+      </div>
+    </article>
+
+    <article class="project reveal">
+
+      <div class="project-cover">Creative.</div>
+
+      <div class="project-content">
+
+        <span class="eyebrow">GRAPHIC DESIGN</span>
+
+        <h3>Creative Design Collection</h3>
+
+        <p>
+          Explore my creative work in graphic design,
+          branding, visual storytelling and digital experiences.
+        </p>
+
+        <div class="tags">
+          <span>Graphic Design</span>
+          <span>Visual Identity</span>
+          <span>Figma</span>
+        </div>
+
+        <div class="project-links">
+          <a href="https://www.behance.net/syedamaryamnoor/projects" target="_blank" rel="noopener">View Behance ↗</a>
+        </div>
+
+      </div>
+    </article>
+
+  </div>
+</div>
+</section>
+
+<!-- BEHANCE -->
+
+<section id="behance">
+<div class="container">
+
+  <div class="behance-box reveal">
+
+    <span class="eyebrow">MY CREATIVE SIDE</span>
+
+    <h3>Beyond Development, <span class="accent">Visual Storytelling.</span></h3>
+
+    <p>
+      Explore my creative work in graphic design,
+      visual storytelling, branding and digital experiences.
+    </p>
+
+    <a class="btn primary"
+       href="https://www.behance.net/syedamaryamnoor/projects"
+       target="_blank" rel="noopener">
+      Explore My Behance Portfolio ↗
+    </a>
+
+  </div>
+</div>
+</section>
+
+<!-- EXPERIENCE -->
+
+<section id="experience">
+<div class="container">
+
+  <span class="eyebrow">MY JOURNEY</span>
+
+  <h2 class="section-title">
+    Education & <span class="accent">Experience.</span>
+  </h2>
+
+  <div class="timeline">
+
+    <div class="timeline-item reveal">
+      <span class="eyebrow">EDUCATION</span>
+      <h3>BS Computer Science — Iqra University</h3>
+      <p>Learning software development, computing and problem-solving.</p>
+    </div>
+
+    <div class="timeline-item reveal">
+      <span class="eyebrow">INTERNSHIP</span>
+      <h3>Frontend Web Developer — Code Alpha</h3>
+      <p>Practical experience in frontend development and responsive interfaces.</p>
+    </div>
+
+    <div class="timeline-item reveal">
+      <span class="eyebrow">TRAINING</span>
+      <h3>Frontend Development — Bano Qabil</h3>
+      <p>Frontend development and responsive web design training.</p>
+    </div>
+
+    <div class="timeline-item reveal">
+      <span class="eyebrow">CREATIVE EXPERIENCE</span>
+      <h3>Graphic Designing Intern — Bano Qabil</h3>
+      <p>Creative design and visual communication experience.</p>
+    </div>
+
+    <div class="timeline-item reveal">
+      <span class="eyebrow">FREELANCING</span>
+      <h3>Freelancer — Upwork</h3>
+      <p>Currently freelancing on Upwork and exploring professional projects and collaborations.</p>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+<div class="container">
+
+  <span class="eyebrow">GET IN TOUCH</span>
+
+  <h2 class="section-title">
+    Let's Create Something <span class="accent">Great.</span>
+  </h2>
+
+  <div class="contact-grid">
+
+    <div class="contact-info">
+
+      <h3>Let's work together.</h3>
+
+      <p>
+        For freelance projects, collaborations and professional
+        opportunities, feel free to contact me.
+      </p>
+
+      <p>
+        <i class="fas fa-phone"></i>
+        <a href="tel:+923402116323">+92 340 2116323</a>
+      </p>
+
+      <p>
+        <i class="fas fa-envelope"></i>
+        <a href="mailto:s.maryam.dev@gmail.com">s.maryam.dev@gmail.com</a>
+      </p>
+
+      <p>
+        <i class="fab fa-linkedin"></i>
+        <a href="https://www.linkedin.com/in/syeda-maryam-180800343/" target="_blank" rel="noopener">LinkedIn Profile ↗</a>
+      </p>
+
+      <p>
+        <i class="fab fa-behance"></i>
+        <a href="https://www.behance.net/syedamaryamnoor/projects" target="_blank" rel="noopener">Behance Portfolio ↗</a>
+      </p>
+
+      <p>
+        <i class="fas fa-location-dot"></i>
+        Karachi, Pakistan
+      </p>
+
+    </div>
+
+    <form id="contactForm">
+
+      <label for="name">Your Name</label>
+      <input id="name" type="text" required placeholder="Enter your name">
+
+      <label for="email">Your Email</label>
+      <input id="email" type="email" required placeholder="Enter your email">
+
+      <label for="subject">Subject</label>
+      <input id="subject" type="text" required placeholder="Subject">
+
+      <label for="message">Message</label>
+      <textarea id="message" required placeholder="Write your message"></textarea>
+
+      <button class="btn primary" type="submit">Prepare Email ↗</button>
+
+      <p id="status" style="margin-top:10px;color:var(--olive)"></p>
+
+    </form>
+
+  </div>
+</div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+
+  <p>© <span id="year"></span> Syeda Maryam Noor. All Rights Reserved.</p>
+
+  <p>Blending Creative Designs with Smart Web Development.</p>
+
+  <div class="footer-links">
+    <a href="#home">Home</a>
+    <a href="#projects">Projects</a>
+    <a href="https://www.linkedin.com/in/syeda-maryam-180800343/" target="_blank">LinkedIn</a>
+    <a href="https://www.behance.net/syedamaryamnoor/projects" target="_blank">Behance</a>
+  </div>
+
+</footer>
+
+<script>
+
+/* MOBILE NAVIGATION */
+
+const menu = document.getElementById("menu");
+const nav = document.getElementById("navLinks");
+
+menu.addEventListener("click", () => {
+  nav.classList.toggle("open");
+});
+
+nav.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    nav.classList.remove("open");
+  });
+});
+
+
+/* DARK AND LIGHT MODE */
+
+const theme = document.getElementById("theme");
+
+if (localStorage.getItem("smn-theme") === "dark") {
+  document.body.classList.add("dark");
+  theme.textContent = "☀";
+}
+
+theme.addEventListener("click", () => {
+
+  document.body.classList.toggle("dark");
+
+  const dark = document.body.classList.contains("dark");
+
+  localStorage.setItem("smn-theme", dark ? "dark" : "light");
+
+  theme.textContent = dark ? "☀" : "☾";
+
+});
+
+
+/* ANIMATED PROFESSIONAL TITLES */
+
+const roles = [
+  "Full Stack Developer",
+  "UI/UX Designer",
+  "Graphic Designer",
+  "Social Media Manager",
+  "Freelancer"
+];
+
+const roleText = document.getElementById("roleText");
+
+let roleIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+function typeRole() {
+
+  const current = roles[roleIndex];
+
+  roleText.textContent = current.substring(0, charIndex);
+
+  if (!deleting && charIndex < current.length) {
+
+    charIndex++;
+    setTimeout(typeRole, 85);
+
+  } else if (deleting && charIndex > 0) {
+
+    charIndex--;
+    setTimeout(typeRole, 40);
+
+  } else {
+
+    deleting = !deleting;
+
+    if (!deleting) {
+      roleIndex = (roleIndex + 1) % roles.length;
+    }
+
+    setTimeout(typeRole, deleting ? 1200 : 300);
+
+  }
+}
+
+typeRole();
+
+
+/* SCROLL ANIMATION */
+
+const observer = new IntersectionObserver(entries => {
+
+  entries.forEach(entry => {
+
+    if (entry.isIntersecting) {
+
+      entry.target.classList.add("visible");
+
+      observer.unobserve(entry.target);
+
+    }
+
+  });
+
+}, { threshold:0.12 });
+
+document.querySelectorAll(".reveal").forEach(element => {
+  observer.observe(element);
+});
+
+
+/* CONTACT FORM */
+
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+
+  e.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const subject = document.getElementById("subject").value;
+  const message = document.getElementById("message").value;
+
+  const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
+
+  document.getElementById("status").textContent =
+    "Opening your email application...";
+
+  window.location.href =
+    `mailto:s.maryam.dev@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+});
+
+
+/* FOOTER YEAR */
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
